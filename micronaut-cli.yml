@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: dev.axorean
+testFramework: spock
+sourceLanguage: java
+buildTool: gradle_kotlin
+features: [app-name, data, data-mongodb, gradle, http-client-test, java, java-application, logback, micronaut-aot, micronaut-build, micronaut-http-validation, netty-server, properties, readme, serialization-jackson, shade, spock, test-resources]
