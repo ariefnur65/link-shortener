@@ -11,11 +11,12 @@ import lombok.RequiredArgsConstructor;
 public class LinkShortenServiceImpl implements LinkShortenService {
     private final LinkShortenRepo linkShortenRepo;
     @Override
-    public LinkShorten save(String originalLink) {
+    public String shorten(String originalLink) {
         LinkShorten linkShorten = LinkShorten.builder()
                 .originalLink(originalLink)
                 .build();
-        return this.linkShortenRepo.save(linkShorten);
+        LinkShorten save = this.linkShortenRepo.save(linkShorten);
+        return "http://localhost:8080/" + save.getIdLink();
     }
 
     @Override
