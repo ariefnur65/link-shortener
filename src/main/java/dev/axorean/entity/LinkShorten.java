@@ -5,6 +5,7 @@ import io.micronaut.data.annotation.GeneratedValue;
 import io.micronaut.data.annotation.Id;
 import io.micronaut.data.annotation.MappedEntity;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -15,8 +16,9 @@ import java.util.Date;
 @Getter
 @Setter
 @Builder
-@MappedEntity
+@MappedEntity(value = "link-shorten")
 @RequiredArgsConstructor
+@AllArgsConstructor
 public class LinkShorten {
     @Id
     @GeneratedValue
