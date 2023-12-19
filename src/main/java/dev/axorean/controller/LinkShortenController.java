@@ -1,13 +1,15 @@
 package dev.axorean.controller;
 
-import dev.axorean.entity.LinkShorten;
 import dev.axorean.service.LinkShortenService;
-import io.micronaut.context.annotation.Parameter;
+import io.micronaut.http.HttpResponse;
 import io.micronaut.http.HttpStatus;
 import io.micronaut.http.annotation.*;
-import io.micronaut.scheduling.annotation.ExecuteOn;
 import io.micronaut.scheduling.TaskExecutors;
+import io.micronaut.scheduling.annotation.ExecuteOn;
 import lombok.RequiredArgsConstructor;
+
+import java.net.URI;
+import java.net.URISyntaxException;
 
 @Controller
 @RequiredArgsConstructor
@@ -22,7 +24,9 @@ public class LinkShortenController {
     }
 
     @Get(uri = "/{idLink}")
-    public void redirectLink (){
-        RedirectRequest request
+    public HttpResponse<String> redirectLink (@PathVariable String idLink) throws URISyntaxException {
+        String url = this.linkShortenService.getOriginalLink(idLink);
+        URI redirectUrl = new URI(url);
+        return HttpResponse.redirect(redirectUrl);
     }
 }
