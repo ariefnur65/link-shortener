@@ -23,7 +23,7 @@ public class LinkShortenController {
         return this.linkShortenService.shorten(originalLink);
     }
 
-    @Get(uri = "/{idLink}")
+    @Get(uri = "/link/{idLink}")
     public HttpResponse<String> redirectLink (@PathVariable String idLink) throws URISyntaxException {
         String url = this.linkShortenService.getOriginalLink(idLink);
         URI redirectUrl = new URI(url);

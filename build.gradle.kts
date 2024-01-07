@@ -17,14 +17,16 @@ dependencies {
     annotationProcessor("io.micronaut.data:micronaut-data-document-processor")
     annotationProcessor("io.micronaut:micronaut-http-validation")
     annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
+    annotationProcessor("io.micronaut.openapi:micronaut-openapi")
+    annotationProcessor ("org.projectlombok:lombok:1.18.30")
     implementation("io.micronaut.data:micronaut-data-mongodb")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
     compileOnly("io.micronaut:micronaut-http-client")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("org.mongodb:mongodb-driver-sync")
     testImplementation("io.micronaut:micronaut-http-client")
+    compileOnly("io.micronaut.openapi:micronaut-openapi-annotations")
     compileOnly ("org.projectlombok:lombok:1.18.30")
-    annotationProcessor ("org.projectlombok:lombok:1.18.30")
     testCompileOnly ("org.projectlombok:lombok:1.18.30")
     testAnnotationProcessor ("org.projectlombok:lombok:1.18.30")
 }
@@ -47,6 +49,7 @@ micronaut {
         incremental(true)
         annotations("dev.axorean.*")
     }
+
     aot {
     // Please review carefully the optimizations enabled below
     // Check https://micronaut-projects.github.io/micronaut-aot/latest/guide/ for more details

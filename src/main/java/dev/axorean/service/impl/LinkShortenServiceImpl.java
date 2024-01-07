@@ -16,7 +16,7 @@ public class LinkShortenServiceImpl implements LinkShortenService {
                 .originalLink(originalLink)
                 .build();
         LinkShorten save = this.linkShortenRepo.save(linkShorten);
-        return "http://localhost:8080/" + save.getIdLink();
+        return "http://localhost:8080/link/" + save.getIdLink();
     }
 
     @Override
