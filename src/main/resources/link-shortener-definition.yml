@@ -1,0 +1,11 @@
+openapi: 3.0.0
+info:
+  description: This is a link shortener API
+  version: 1.0.0
+  title: Library
+  license:
+    name: Apache-2.0
+    url: "https://www.apache.org/licenses/LICENSE-2.0.html"
+tags:
+  - name: link-shorten
+    description: link shortener resources where it store original link of shortened
