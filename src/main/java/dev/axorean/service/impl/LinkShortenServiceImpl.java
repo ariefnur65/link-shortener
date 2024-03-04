@@ -1,6 +1,7 @@
 package dev.axorean.service.impl;
 
 import dev.axorean.entity.LinkShorten;
+import dev.axorean.model.ShortenLinkRequest;
 import dev.axorean.persistence.repo.LinkShortenRepo;
 import dev.axorean.service.LinkShortenService;
 import jakarta.inject.Singleton;
@@ -11,9 +12,9 @@ import lombok.RequiredArgsConstructor;
 public class LinkShortenServiceImpl implements LinkShortenService {
     private final LinkShortenRepo linkShortenRepo;
     @Override
-    public String shorten(String originalLink) {
+    public String shorten(ShortenLinkRequest originalLink) {
         LinkShorten linkShorten = LinkShorten.builder()
-                .originalLink(originalLink)
+                .originalLink(originalLink.getOriginalUrl())
                 .build();
         LinkShorten save = this.linkShortenRepo.save(linkShorten);
         return "http://localhost:8080/link/" + save.getIdLink();
