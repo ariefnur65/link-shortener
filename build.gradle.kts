@@ -25,6 +25,8 @@ dependencies {
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("org.mongodb:mongodb-driver-sync")
     testImplementation("io.micronaut:micronaut-http-client")
+    testImplementation("io.micronaut.test:micronaut-test-spock")
+    testImplementation("org.spockframework:spock-core")
     compileOnly("io.micronaut.openapi:micronaut-openapi-annotations")
     compileOnly ("org.projectlombok:lombok:1.18.30")
     testCompileOnly ("org.projectlombok:lombok:1.18.30")
