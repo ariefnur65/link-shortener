@@ -1,5 +1,6 @@
 package dev.axorean.controller;
 
+import dev.axorean.model.ShortenLinkRequest;
 import dev.axorean.service.LinkShortenService;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.HttpStatus;
@@ -19,8 +20,8 @@ public class LinkShortenController {
 
     @Post(uri = "/shorten")
     @Status(HttpStatus.CREATED)
-    public String shorten(@Body String originalLink) {
-        return this.linkShortenService.shorten(originalLink);
+    public String shorten(@Body ShortenLinkRequest shortenLinkRequest) {
+        return this.linkShortenService.shorten(shortenLinkRequest);
     }
 
     @Get(uri = "/link/{idLink}")
